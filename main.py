@@ -43,9 +43,10 @@ def main():
     logger.info("Editing video...")
     modified_frames = draw_on_frames(frames, formatted_video_analysis)
 
+    video_output_path = os.path.join(OUTPUT_PATH, "video.mp4")
     frames_by_second = get_video_frames_by_second(video_path)
 
-    generate_video(modified_frames, video_path, frames_by_second)
+    generate_video(modified_frames, video_output_path, frames_by_second)
 
     logger.info("Video edited.")
 
