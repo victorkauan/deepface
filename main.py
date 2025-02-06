@@ -55,7 +55,12 @@ def main():
 
 def analyze_image(image_path):
     try:
-        return DeepFace.analyze(img_path=image_path, actions=ANALYZE_ACTIONS)
+        return DeepFace.analyze(
+            img_path=image_path,
+            actions=ANALYZE_ACTIONS,
+            detector_backend="retina_face",
+            align=True
+        )
     except:
         return []
 
